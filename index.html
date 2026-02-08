@@ -17,6 +17,9 @@
       --card: #ffffff;
       --accent: #4f46e5;
       --accent-dark: #3730a3;
+      --accent-soft: #eef2ff;
+      --shadow: 0 18px 40px rgba(79, 70, 229, 0.12);
+      --shadow-soft: 0 10px 24px rgba(15, 23, 42, 0.08);
       --text: #111827;
       --muted: #6b7280;
       --border: #e5e7eb;
@@ -54,7 +57,7 @@
       border-radius: 24px;
       padding: 32px;
       border: 1px solid var(--border);
-      box-shadow: 0 18px 40px rgba(79, 70, 229, 0.08);
+      box-shadow: var(--shadow);
     }
 
     .hero-grid {
@@ -73,7 +76,8 @@
       border: 1px solid var(--border);
       padding: 16px;
       text-align: center;
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .profile-photo {
@@ -88,6 +92,11 @@
     .profile-card small {
       color: var(--muted);
       font-weight: 500;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(79, 70, 229, 0.18);
     }
 
     .badge {
@@ -143,7 +152,8 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 28px;
-      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .section h2 {
@@ -161,7 +171,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #eef2ff;
+      background: var(--accent-soft);
       color: var(--accent-dark);
       padding: 6px 12px;
       border-radius: 999px;
@@ -185,11 +195,18 @@
       border-radius: 16px;
       border: 1px solid var(--border);
       background: #f9fafb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project-card h3 {
       font-size: 1.05rem;
       margin-bottom: 4px;
+    }
+
+    .helper-text {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .cert-list {
@@ -210,6 +227,43 @@
     .cert-item span {
       font-weight: 600;
       color: var(--accent-dark);
+    }
+
+    .cert-gallery {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 16px;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: #f3f4f6;
+    }
+
+    .cert-card figcaption {
+      padding: 12px 14px;
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    .cert-card:hover,
+    .project-card:hover,
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
     }
 
     footer {
@@ -268,7 +322,7 @@
         <div class="profile-card">
           <img
             class="profile-photo"
-            src="profile-photo.jpg"
+            src="images/profile-photo.svg"
             alt="Profile photo of Abhishek Kumar Tiwari"
           />
           <small>Full-Stack & Frontend Projects</small>
@@ -369,6 +423,36 @@
           <div class="cert-item"><span>✔</span> Frontend Development Internship Certificate – Bharat Interns</div>
           <div class="cert-item"><span>✔</span> Web Development Internship Certificate – Codtech IT Solutions</div>
         </div>
+        <div class="cert-gallery">
+          <figure class="cert-card">
+            <img src="images/cert-codtech.svg" alt="Codtech IT Solutions internship certificate" />
+            <figcaption>Codtech IT Solutions</figcaption>
+          </figure>
+          <figure class="cert-card">
+            <img src="images/cert-codeshape.svg" alt="Codeshape IT Solution certificate" />
+            <figcaption>Codeshape IT Solution</figcaption>
+          </figure>
+          <figure class="cert-card">
+            <img src="images/cert-gfg.svg" alt="GeeksforGeeks DSA 160 Days certificate" />
+            <figcaption>GeeksforGeeks DSA 160</figcaption>
+          </figure>
+          <figure class="cert-card">
+            <img src="images/cert-geekster.svg" alt="Geekster certificate" />
+            <figcaption>Geekster</figcaption>
+          </figure>
+          <figure class="cert-card">
+            <img src="images/cert-hackerrank.svg" alt="HackerRank problem solving certificate" />
+            <figcaption>HackerRank Problem Solving</figcaption>
+          </figure>
+          <figure class="cert-card">
+            <img src="images/cert-itronix.svg" alt="Itronix Solutions C/C++ certificate" />
+            <figcaption>Itronix Solutions</figcaption>
+          </figure>
+        </div>
+        <p class="helper-text">
+          Replace the files in the <strong>images/</strong> folder with your actual profile photo and
+          certificate images.
+        </p>
       </section>
 
       <section class="section">
