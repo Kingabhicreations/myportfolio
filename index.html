@@ -57,6 +57,39 @@
       box-shadow: 0 18px 40px rgba(79, 70, 229, 0.08);
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .profile-card {
+      display: grid;
+      gap: 12px;
+      place-items: center;
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e0e7ff;
+      background: #eef2ff;
+    }
+
+    .profile-card small {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -159,6 +192,26 @@
       margin-bottom: 4px;
     }
 
+    .cert-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .cert-item span {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
     footer {
       margin-top: 32px;
       text-align: center;
@@ -169,6 +222,16 @@
     @media (max-width: 640px) {
       header {
         padding: 24px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+
+      .profile-card {
+        width: 100%;
+        justify-items: center;
       }
 
       .section {
@@ -185,20 +248,30 @@
 <body>
   <div class="container">
     <header>
-      <div class="hero">
-        <span class="badge">Web Developer</span>
-        <h1>Abhishek Kumar Tiwari</h1>
-        <p>
-          Enthusiastic and detail-oriented BCA student with strong foundations in web development,
-          programming, and problem solving. Passionate about building responsive, user-friendly web
-          applications and eager to contribute to real-world projects.
-        </p>
-        <div class="contact-list">
-          <span class="contact-item">📍 Bansdih, Ballia (UP) 277202</span>
-          <a class="contact-item" href="mailto:abhishektiwari6849@gmail.com">
-            ✉️ abhishektiwari6849@gmail.com
-          </a>
-          <a class="contact-item" href="tel:+916307532101">📞 +91 6307532101</a>
+      <div class="hero-grid">
+        <div class="hero">
+          <span class="badge">Web Developer</span>
+          <h1>Abhishek Kumar Tiwari</h1>
+          <p>
+            Enthusiastic and detail-oriented BCA student with strong foundations in web development,
+            programming, and problem solving. Passionate about building responsive, user-friendly web
+            applications and eager to contribute to real-world projects.
+          </p>
+          <div class="contact-list">
+            <span class="contact-item">📍 Bansdih, Ballia (UP) 277202</span>
+            <a class="contact-item" href="mailto:abhishektiwari6849@gmail.com">
+              ✉️ abhishektiwari6849@gmail.com
+            </a>
+            <a class="contact-item" href="tel:+916307532101">📞 +91 6307532101</a>
+          </div>
+        </div>
+        <div class="profile-card">
+          <img
+            class="profile-photo"
+            src="profile-photo.jpg"
+            alt="Profile photo of Abhishek Kumar Tiwari"
+          />
+          <small>Full-Stack & Frontend Projects</small>
         </div>
       </div>
     </header>
@@ -285,15 +358,17 @@
 
       <section class="section">
         <h2>Certifications</h2>
-        <ul>
-          <li>DSA 160 Days Challenge – GeeksforGeeks</li>
-          <li>Problem Solving (Basic) – HackerRank</li>
-          <li>C Language Certification – HackerRank</li>
-          <li>C / C++ Programming Certification – Itronix Solution</li>
-          <li>Frontend Development Internship Certificate – Codeshape IT Solution</li>
-          <li>Frontend Development Internship Certificate – Bharat Interns</li>
-          <li>Web Development Internship Certificate – Codtech IT Solutions</li>
-        </ul>
+        <div class="cert-list">
+          <div class="cert-item"><span>✔</span> DSA 160 Days Challenge – GeeksforGeeks</div>
+          <div class="cert-item"><span>✔</span> Problem Solving (Basic) – HackerRank</div>
+          <div class="cert-item"><span>✔</span> C Language Certification – HackerRank</div>
+          <div class="cert-item"><span>✔</span> C / C++ Programming Certification – Itronix Solution</div>
+          <div class="cert-item">
+            <span>✔</span> Frontend Development Internship Certificate – Codeshape IT Solution
+          </div>
+          <div class="cert-item"><span>✔</span> Frontend Development Internship Certificate – Bharat Interns</div>
+          <div class="cert-item"><span>✔</span> Web Development Internship Certificate – Codtech IT Solutions</div>
+        </div>
       </section>
 
       <section class="section">
